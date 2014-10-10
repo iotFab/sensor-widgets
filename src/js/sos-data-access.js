@@ -11,6 +11,8 @@
 	return function(config, redraw) {
         SOS.setUrl(config.service);
 
+        var context = this;
+
         function read() {
             var offering = config.offering;
             var features = config.feature ? [config.feature] : isArray(config.features) ? config.features : JSON.parse(config.features);
@@ -44,7 +46,7 @@
                     uom: observation.result.hasOwnProperty("uom") ? observation.result.uom : "(N/A)"
                 });
                 if (data.length == observations.length) {
-                    redraw(data);
+                    redraw.call(context, data);
                 }
             }
         }

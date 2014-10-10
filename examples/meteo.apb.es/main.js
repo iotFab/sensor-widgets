@@ -1,7 +1,8 @@
 /**
  * @author Oscar Fonts <oscar.fonts@geomati.co>
  */
-define(['locale-date'], function(ld) {
+define(['locale-date', 'jquery'], function(ld, $) {
+    "use strict";
 
     ld.utc(false);
     ld.locale("es");
